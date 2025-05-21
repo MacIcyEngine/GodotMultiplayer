@@ -30,5 +30,6 @@ func _on_multiplayer_spawner_spawned(node: Node) -> void:
 		players.append(node)
 
 		for other_player in players:
+			# Replace with a spawnpoint system if you want players to collide with each other
 			node.add_collision_exception_with(other_player)
 			node.global_position = get_viewport().size * 0.5
