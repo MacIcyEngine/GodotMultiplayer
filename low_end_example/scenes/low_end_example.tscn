@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://buffeanqnomod"]
 
-[ext_resource type="PackedScene" uid="uid://dvdu6bsy03jdg" path="res://network_example_low_end/scenes/low_end_ui.tscn" id="1_vtjsy"]
-[ext_resource type="PackedScene" uid="uid://b4egfrm48x05b" path="res://network_example_low_end/scenes/low_end_player_spawner.tscn" id="3_hye83"]
+[ext_resource type="PackedScene" uid="uid://dvdu6bsy03jdg" path="res://low_end_example/scenes/low_end_ui.tscn" id="1_vtjsy"]
+[ext_resource type="PackedScene" uid="uid://b4egfrm48x05b" path="res://low_end_example/scenes/low_end_player_spawner.tscn" id="3_hye83"]
 
 [node name="LowEndPlayerSpawner" type="Node2D"]
 
