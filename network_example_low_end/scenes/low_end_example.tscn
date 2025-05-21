@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://buffeanqnomod"]
+
+[ext_resource type="PackedScene" uid="uid://dvdu6bsy03jdg" path="res://network_example_low_end/scenes/low_end_ui.tscn" id="1_vtjsy"]
+[ext_resource type="PackedScene" uid="uid://qccumdi02vc" path="res://network_example_low_end/scenes/player_spawner.tscn" id="3_hye83"]
+
+[node name="LowEndExample" type="Node2D"]
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("3_hye83")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LowEndUI" parent="CanvasLayer" instance=ExtResource("1_vtjsy")]
