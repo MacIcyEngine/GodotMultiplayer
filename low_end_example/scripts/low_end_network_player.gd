@@ -1,6 +1,6 @@
 class_name LowEndNetworkPlayer extends CharacterBody2D
 
-const NetworkedPlayerScene: PackedScene = preload("res://network_example_low_end/scenes/low_end_network_player.tscn")
+const NetworkedPlayerScene: PackedScene = preload("res://low_end_example/scenes/low_end_network_player.tscn")
 
 @export var speed: float = 500
 
