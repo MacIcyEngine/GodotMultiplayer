@@ -17,7 +17,7 @@ func on_peer_connected(peer_id: int) -> void:
 
 
 func on_peer_disconnected(peer_id: int) -> void:
-	# Create IDUnassignment to broad cast to all still connected peers
+	# Create IDUnassignment to broadcast to all still connected peers
 
 	remote_ids.erase(peer_id)
 

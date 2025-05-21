@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4egfrm48x05b"]
+
+[ext_resource type="Script" uid="uid://dhhaiv222hdio" path="res://network_example_low_end/scripts/low_end_player_spawner.gd" id="1_ourrh"]
+
+[node name="LowEndPlayerSpawner" type="Node2D"]
+script = ExtResource("1_ourrh")

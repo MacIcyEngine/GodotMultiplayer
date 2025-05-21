@@ -12,3 +12,18 @@ func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * SPEED
 
 	move_and_slide()
+
+	server_position_rpc.rpc_id(1, global_position)
+
+
+@rpc("unreliable")
+func server_position_rpc(pos: Vector2):
+	global_position = pos
+	remote_position_rpc.rpc(pos)
+
+
+@rpc("unreliable", "any_peer")
+func remote_position_rpc(pos: Vector2):
+	if is_multiplayer_authority(): return
+
+	global_position = pos
