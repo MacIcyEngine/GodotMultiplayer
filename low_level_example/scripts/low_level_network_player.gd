@@ -1,16 +1,16 @@
-class_name LowEndNetworkPlayer extends CharacterBody2D
+class_name LowLevelNetworkPlayer extends CharacterBody2D
 
-const NetworkedPlayerScene: PackedScene = preload("res://low_end_example/scenes/low_end_network_player.tscn")
+const NetworkedPlayerScene: PackedScene = preload("res://low_level_example/scenes/low_level_network_player.tscn")
 
 @export var speed: float = 500
 
 var is_authority: bool:
-	get: return !LowEndNetworkHandler.is_server && owner_id == ClientNetworkGlobals.id
+	get: return !LowLevelNetworkHandler.is_server && owner_id == ClientNetworkGlobals.id
 
 var owner_id: int
 
-static func create(owner_id: int) -> LowEndNetworkPlayer:
-	var network_player: LowEndNetworkPlayer = NetworkedPlayerScene.instantiate()
+static func create(owner_id: int) -> LowLevelNetworkPlayer:
+	var network_player: LowLevelNetworkPlayer = NetworkedPlayerScene.instantiate()
 	network_player.owner_id = owner_id
 	return network_player
 
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	PlayerPosition.create(owner_id, global_position).send(LowEndNetworkHandler.server_peer)
+	PlayerPosition.create(owner_id, global_position).send(LowLevelNetworkHandler.server_peer)
 
 
 func server_handle_player_position(peer_id: int, player_position: PlayerPosition) -> void:
@@ -35,7 +35,7 @@ func server_handle_player_position(peer_id: int, player_position: PlayerPosition
 
 	global_position = player_position.position
 
-	PlayerPosition.create(owner_id, global_position).broadcast(LowEndNetworkHandler.connection)
+	PlayerPosition.create(owner_id, global_position).broadcast(LowLevelNetworkHandler.connection)
 
 
 func client_handle_player_position(player_position: PlayerPosition) -> void:

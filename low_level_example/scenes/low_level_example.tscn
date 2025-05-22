@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://buffeanqnomod"]
+
+[ext_resource type="Script" uid="uid://dy1tioaw07c5u" path="res://low_level_example/scripts/low_level_network_handler.gd" id="1_2qvmy"]
+[ext_resource type="PackedScene" uid="uid://b4egfrm48x05b" path="res://low_level_example/scenes/low_level_player_spawner.tscn" id="2_8xrpe"]
+[ext_resource type="PackedScene" uid="uid://dvdu6bsy03jdg" path="res://low_level_example/scenes/low_level_ui.tscn" id="3_swl3y"]
+
+[node name="LowLevelExample" type="Node2D"]
+script = ExtResource("1_2qvmy")
+
+[node name="LowLevelPlayerSpawner" parent="." instance=ExtResource("2_8xrpe")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LowLevelUI" parent="CanvasLayer" instance=ExtResource("3_swl3y")]

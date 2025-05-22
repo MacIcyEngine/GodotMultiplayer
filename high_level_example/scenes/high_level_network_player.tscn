@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqp3koxevnhjm"]
 
-[ext_resource type="Script" uid="uid://c8phw0k238svi" path="res://high_end_example/scripts/high_end_network_player.gd" id="1_74wbi"]
-[ext_resource type="Texture2D" uid="uid://cbl12pwnnfk0c" path="res://icon.svg" id="2_x477g"]
+[ext_resource type="Script" uid="uid://c8phw0k238svi" path="res://high_level_example/scripts/high_level_network_player.gd" id="1_0yi72"]
+[ext_resource type="Texture2D" uid="uid://cbl12pwnnfk0c" path="res://icon.svg" id="2_7xfmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6rbc"]
 size = Vector2(128, 128)
@@ -11,11 +11,11 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="HighEndNetworkPlayer" type="CharacterBody2D"]
-script = ExtResource("1_74wbi")
+[node name="HighLevelNetworkPlayer" type="CharacterBody2D"]
+script = ExtResource("1_0yi72")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_x477g")
+texture = ExtResource("2_7xfmq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j6rbc")

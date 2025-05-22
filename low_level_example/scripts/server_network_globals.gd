@@ -5,15 +5,15 @@ signal handle_player_position(peer_id: int, player_position: PlayerPosition)
 var remote_ids: Array[int]
 
 func _ready() -> void:
-	LowEndNetworkHandler.on_server_packet.connect(on_server_packet)
-	LowEndNetworkHandler.on_peer_connected.connect(on_peer_connected)
-	LowEndNetworkHandler.on_peer_disconnected.connect(on_peer_disconnected)
+	LowLevelNetworkHandler.on_server_packet.connect(on_server_packet)
+	LowLevelNetworkHandler.on_peer_connected.connect(on_peer_connected)
+	LowLevelNetworkHandler.on_peer_disconnected.connect(on_peer_disconnected)
 
 
 func on_peer_connected(peer_id: int) -> void:
 	remote_ids.append(peer_id)
 
-	IDAssignment.create(peer_id, remote_ids).broadcast(LowEndNetworkHandler.connection)
+	IDAssignment.create(peer_id, remote_ids).broadcast(LowLevelNetworkHandler.connection)
 
 
 func on_peer_disconnected(peer_id: int) -> void:

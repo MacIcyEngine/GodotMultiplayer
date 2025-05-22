@@ -8,7 +8,7 @@ var id: int = -1
 var remote_ids: Array[int]
 
 func _ready() -> void:
-	LowEndNetworkHandler.on_client_packet.connect(on_client_packet)
+	LowLevelNetworkHandler.on_client_packet.connect(on_client_packet)
 
 
 func on_client_packet(data: PackedByteArray) -> void:

@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LowEndNetworkHandler="*res://low_end_example/scripts/low_end_network_handler.gd"
-ClientNetworkGlobals="*res://low_end_example/scripts/client_network_globals.gd"
-ServerNetworkGlobals="*res://low_end_example/scripts/server_network_globals.gd"
+LowLevelNetworkHandler="*res://low_level_example/scripts/low_level_network_handler.gd"
+ClientNetworkGlobals="*res://low_level_example/scripts/client_network_globals.gd"
+ServerNetworkGlobals="*res://low_level_example/scripts/server_network_globals.gd"
+HighLevelNetworkHandler="*res://high_level_example/scripts/high_level_network_handler.gd"
 
 [dotnet]
 
