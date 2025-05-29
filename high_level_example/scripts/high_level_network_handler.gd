@@ -1,5 +1,6 @@
 extends Node
 
+const IP_ADDRESS: String = "localhost"
 const PORT: int = 42096 # Below 65535 (16-bit unsigned max value)
 
 var peer: ENetMultiplayerPeer
@@ -12,5 +13,5 @@ func start_server() -> void:
 
 func start_client() -> void:
 	peer = ENetMultiplayerPeer.new()
-	peer.create_client("localhost", PORT)
+	peer.create_client(IP_ADDRESS, PORT)
 	multiplayer.multiplayer_peer = peer
