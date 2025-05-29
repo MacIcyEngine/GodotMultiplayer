@@ -11,12 +11,6 @@ enum PACKET_TYPE {
 var packet_type: PACKET_TYPE
 var flag: int
 
-static func create_from_data(data: PackedByteArray) -> PacketInfo:
-	var packet_info: PacketInfo = PacketInfo.new()
-	packet_info.decode(data)
-	return packet_info
-
-
 # Override function in derived classes
 func encode() -> PackedByteArray:
 	var data: PackedByteArray

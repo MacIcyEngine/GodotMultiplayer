@@ -14,7 +14,7 @@ properties/0/replication_mode = 1
 [node name="HighLevelNetworkPlayer" type="CharacterBody2D"]
 script = ExtResource("1_0yi72")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_7xfmq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

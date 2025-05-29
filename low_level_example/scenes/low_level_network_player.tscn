@@ -10,7 +10,7 @@ size = Vector2(128, 128)
 motion_mode = 1
 script = ExtResource("1_gwymf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_7kts0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

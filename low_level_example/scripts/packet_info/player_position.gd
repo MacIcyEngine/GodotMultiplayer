@@ -4,18 +4,18 @@ var id: int
 var position: Vector2
 
 static func create(id: int, position: Vector2) -> PlayerPosition:
-	var player_position: PlayerPosition = PlayerPosition.new()
-	player_position.packet_type = PACKET_TYPE.PLAYER_POSITION
-	player_position.flag = ENetPacketPeer.FLAG_UNSEQUENCED
-	player_position.id = id
-	player_position.position = position
-	return player_position
+	var info: PlayerPosition = PlayerPosition.new()
+	info.packet_type = PACKET_TYPE.PLAYER_POSITION
+	info.flag = ENetPacketPeer.FLAG_UNSEQUENCED
+	info.id = id
+	info.position = position
+	return info
 
 
-static func create_from_data(data: PackedByteArray) -> PacketInfo:
-	var packet_info: PlayerPosition = PlayerPosition.new()
-	packet_info.decode(data)
-	return packet_info
+static func create_from_data(data: PackedByteArray) -> PlayerPosition:
+	var info: PlayerPosition = PlayerPosition.new()
+	info.decode(data)
+	return info
 
 
 func encode() -> PackedByteArray:

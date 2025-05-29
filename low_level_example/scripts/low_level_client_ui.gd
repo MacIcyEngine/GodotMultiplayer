@@ -5,4 +5,4 @@ func _on_server_pressed() -> void:
 
 
 func _on_client_pressed() -> void:
-	LowLevelNetworkHandler.connect_client()
+	LowLevelNetworkHandler.start_client()

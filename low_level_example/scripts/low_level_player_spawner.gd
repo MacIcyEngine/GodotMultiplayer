@@ -1,29 +1,16 @@
-extends Node2D
+extends Node
 
-var players: Array[LowLevelNetworkPlayer]
+const LOW_LEVEL_NETWORK_PLAYER = preload("res://low_level_example/scenes/low_level_network_player.tscn")
 
-func _enter_tree() -> void:
-	LowLevelNetworkHandler.on_peer_connected.connect(on_peer_connected)
-	ClientNetworkGlobals.handle_local_id_assignment.connect(handle_id_assignment)
-	ClientNetworkGlobals.handle_remote_id_assignment.connect(handle_id_assignment)
-
-
-func on_peer_connected(peer_id: int) -> void:
-	create_and_spawn_player(peer_id)
+func _ready() -> void:
+	LowLevelNetworkHandler.on_peer_connected.connect(spawn_player)
+	ClientNetworkGlobals.handle_local_id_assignment.connect(spawn_player)
+	ClientNetworkGlobals.handle_remote_id_assignment.connect(spawn_player)
 
 
-func handle_id_assignment(id: int) -> void:
-	create_and_spawn_player(id)
-
-
-func create_and_spawn_player(id: int) -> void:
-	var player: LowLevelNetworkPlayer = LowLevelNetworkPlayer.create(id)
-
-	players.append(player)
-
-	# Replace with spawn point system if you want players to collide with each other.
-	for other_player in players:
-		player.add_collision_exception_with(other_player)
-		player.global_position = get_viewport().size / 2
+func spawn_player(id: int) -> void:
+	var player = LOW_LEVEL_NETWORK_PLAYER.instantiate()
+	player.owner_id = id
+	player.name = str(id) # Optional, but it beats the name "@CharacterBody2D@2/3/4..."
 
 	call_deferred("add_child", player)

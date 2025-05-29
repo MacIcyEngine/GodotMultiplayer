@@ -4,20 +4,18 @@ var id: int
 var remote_ids: Array[int]
 
 static func create(id: int, remote_ids: Array[int]) -> IDAssignment:
-	var id_assignment: IDAssignment = IDAssignment.new()
-
-	id_assignment.packet_type = PACKET_TYPE.ID_ASSIGNMENT
-	id_assignment.flag = ENetPacketPeer.FLAG_RELIABLE
-	id_assignment.id = id
-	id_assignment.remote_ids = remote_ids
-
-	return id_assignment
+	var info: IDAssignment = IDAssignment.new()
+	info.packet_type = PACKET_TYPE.ID_ASSIGNMENT
+	info.flag = ENetPacketPeer.FLAG_RELIABLE
+	info.id = id
+	info.remote_ids = remote_ids
+	return info
 
 
-static func create_from_data(data: PackedByteArray) -> PacketInfo:
-	var packet_info: IDAssignment = IDAssignment.new()
-	packet_info.decode(data)
-	return packet_info
+static func create_from_data(data: PackedByteArray) -> IDAssignment:
+	var info: IDAssignment = IDAssignment.new()
+	info.decode(data)
+	return info
 
 
 func encode() -> PackedByteArray:

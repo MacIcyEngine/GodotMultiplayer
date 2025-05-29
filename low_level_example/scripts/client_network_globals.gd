@@ -19,6 +19,7 @@ func on_client_packet(data: PackedByteArray) -> void:
 
 		PacketInfo.PACKET_TYPE.PLAYER_POSITION:
 			handle_player_position.emit(PlayerPosition.create_from_data(data))
+
 		_:
 			push_error("Packet type with index ", data[0], " unhandled!")
 
