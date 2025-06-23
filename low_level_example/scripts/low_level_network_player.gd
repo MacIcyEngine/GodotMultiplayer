@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED: float = 500
+const SPEED: float = 500.0
 
 var is_authority: bool:
 	get: return !LowLevelNetworkHandler.is_server && owner_id == ClientNetworkGlobals.id
@@ -10,6 +10,11 @@ var owner_id: int
 func _enter_tree() -> void:
 	ServerNetworkGlobals.handle_player_position.connect(server_handle_player_position)
 	ClientNetworkGlobals.handle_player_position.connect(client_handle_player_position)
+
+
+func _exit_tree() -> void:
+	ServerNetworkGlobals.handle_player_position.disconnect(server_handle_player_position)
+	ClientNetworkGlobals.handle_player_position.disconnect(client_handle_player_position)
 
 
 func _physics_process(delta: float) -> void:
