@@ -28,5 +28,10 @@ text = "SERVER"
 layout_mode = 2
 text = "CLIENT"
 
+[node name="Host" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "HOST (Server+Player)"
+
 [connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
 [connection signal="pressed" from="VBoxContainer/Client" to="." method="_on_client_pressed"]
+[connection signal="pressed" from="VBoxContainer/Host" to="." method="_on_host_pressed"]

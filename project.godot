@@ -11,15 +11,12 @@ config_version=5
 [application]
 
 config/name="Godot Multiplayer"
-run/main_scene="uid://buffeanqnomod"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://dytxckecq42lh"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-LowLevelNetworkHandler="*res://low_level_example/scripts/low_level_network_handler.gd"
-ClientNetworkGlobals="*res://low_level_example/scripts/client_network_globals.gd"
-ServerNetworkGlobals="*res://low_level_example/scripts/server_network_globals.gd"
 HighLevelNetworkHandler="*res://high_level_example/scripts/high_level_network_handler.gd"
 
 [dotnet]
